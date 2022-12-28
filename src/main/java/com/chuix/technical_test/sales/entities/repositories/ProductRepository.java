@@ -12,7 +12,7 @@ import com.chuix.technical_test.sales.entities.Product;
 
 public interface ProductRepository extends JpaRepository<Product, Long> {
 
-	@Query(value = "select p from products p where :applyDate BETWEEN p.startDate and p.endDate and p.productId=:productId and p.brandId = :brandId", nativeQuery = false)
+	@Query(value = "select p from Product p where :applyDate BETWEEN p.startDate and p.endDate and p.productId=:productId and p.brandId = :brandId", nativeQuery = false)
 	public List<Product> getProductsByCriteria(
 			@Param("applyDate") Date applyDate, 
 			@Param("productId") Long productId, 

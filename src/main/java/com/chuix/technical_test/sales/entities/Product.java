@@ -1,12 +1,18 @@
 package com.chuix.technical_test.sales.entities;
 
 import java.io.Serializable;
+import java.security.Timestamp;
 import java.util.Date;
 import javax.persistence.*;
 
+import org.springframework.data.annotation.CreatedBy;
+import org.springframework.data.annotation.CreatedDate;
+import org.springframework.data.jpa.domain.support.AuditingEntityListener;
+
 import lombok.Data;
 
-@Entity(name ="products")
+@Entity
+@Table(name ="products")
 @Data
 public class Product implements Serializable {
 
@@ -41,6 +47,4 @@ public class Product implements Serializable {
 	private String currency; 
 	
 	private static final long serialVersionUID = -261236061895253340L;
-
-	
 }
