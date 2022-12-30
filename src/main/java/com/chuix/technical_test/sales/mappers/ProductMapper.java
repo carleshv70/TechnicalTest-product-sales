@@ -14,7 +14,6 @@ import com.chuix.technical_test.sales.model.ProductDto;
 public interface ProductMapper {
 
 	ProductMapper INSTANCE = Mappers.getMapper(ProductMapper.class);
-
 	
 	ProductDto mapToDto(Product entity);
 	Product  mapToEntity(ProductDto dto);

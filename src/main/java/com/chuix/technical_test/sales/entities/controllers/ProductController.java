@@ -1,12 +1,8 @@
 package com.chuix.technical_test.sales.entities.controllers;
 
-import java.util.Date;
+import java.time.LocalDateTime;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
-import java.util.stream.Collectors;
-
-import javax.print.attribute.standard.DateTimeAtCompleted;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.format.annotation.DateTimeFormat;
@@ -20,7 +16,6 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.chuix.technical_test.sales.entities.services.ProductServices;
 import com.chuix.technical_test.sales.mappers.ProductMapper;
-import com.chuix.technical_test.sales.model.ProductDto;
 
 @RestController
 @RequestMapping("/products")
@@ -35,7 +30,7 @@ public class ProductController {
 	@GetMapping("/")
 	@ResponseStatus(value = HttpStatus.OK)
 	public ResponseEntity<?> getProducts(
-			@RequestParam(name ="application-date")  @DateTimeFormat(pattern="yyyy-MM-dd") Date applyDate,
+			@RequestParam(name ="application-date")  @DateTimeFormat(pattern="yyyy-MM-dd'T'HH:mm:ss") LocalDateTime applyDate,
 			@RequestParam(name = "product-id") Long productId,
 			@RequestParam(name = "brand-id") Long brandId
 			) {

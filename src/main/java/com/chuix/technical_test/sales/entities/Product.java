@@ -1,13 +1,14 @@
 package com.chuix.technical_test.sales.entities;
 
 import java.io.Serializable;
-import java.security.Timestamp;
-import java.util.Date;
-import javax.persistence.*;
+import java.time.LocalDateTime;
 
-import org.springframework.data.annotation.CreatedBy;
-import org.springframework.data.annotation.CreatedDate;
-import org.springframework.data.jpa.domain.support.AuditingEntityListener;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
 
 import lombok.Data;
 
@@ -26,10 +27,10 @@ public class Product implements Serializable {
 	private Long brandId;
 	
 	@Column(name = "START_DATE")
-	private Date  startDate;
+	private LocalDateTime  startDate;
 	
 	@Column(name = "END_DATE")
-	private Date endDate;
+	private LocalDateTime endDate;
 	
 	@Column(name = "PRICE_LIST")
 	private Integer priceList; 

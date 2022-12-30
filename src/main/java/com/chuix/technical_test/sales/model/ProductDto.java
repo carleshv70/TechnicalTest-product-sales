@@ -1,6 +1,6 @@
 package com.chuix.technical_test.sales.model;
 
-import java.util.Date;
+import java.time.LocalDateTime;
 
 import lombok.Data;
 
@@ -12,6 +12,6 @@ public class ProductDto {
 	private Long productId;
 	private Integer priceList;
 	private Double price;	
-	private Date  startDate;
-	private Date endDate;
+	private LocalDateTime  startDate;
+	private LocalDateTime endDate;
 }
